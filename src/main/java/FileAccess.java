@@ -46,7 +46,7 @@ public class FileAccess
         if (hdfs.exists(destionationPath)) {
             hdfs.delete(destionationPath, true);
         }
-        hdfs.create(destionationPath);
+        hdfs.createNewFile(destionationPath);
     }
 
     /**
@@ -80,9 +80,8 @@ public class FileAccess
 
         FSDataInputStream inputStream = hdfs.open(destionationPath);
         String content = IOUtils.toString(inputStream);
-        System.out.println("Readed content: " + content);
         inputStream.close();
-        return null;
+        return content;
     }
 
     /**

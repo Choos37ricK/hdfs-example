@@ -11,7 +11,7 @@ public class Main
 
             //fileAccess.create(rootPath + "createMethod.txt");
             //fileAccess.append(rootPath + "createMethod.txt", "hello, reverse this: Nortoza Forhnis");
-            //fileAccess.read(rootPath + "createMethod.txt");
+            //System.out.println("Readed content: " + fileAccess.read(rootPath + "createMethod.txt"));
             //fileAccess.delete(rootPath + "folder/");
             //System.out.println("Path is directory: " + fileAccess.isDirectory(rootPath + "createMethod.txt/"));
             fileAccess.list(rootPath).forEach(System.out::println);
