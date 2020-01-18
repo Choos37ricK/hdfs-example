@@ -35,6 +35,20 @@ public class FileAccess
         hdfs = FileSystem.get(new URI(rootPath), configuration);
     }
 
+    public void copyFromLocalFile(String srcPath, String dstPath) throws IOException {
+        Path sourcePath = new Path(srcPath);
+        Path destionationPath = new Path(dstPath);
+
+        hdfs.copyFromLocalFile(false, true, sourcePath, destionationPath);
+    }
+
+    public void copyToLocalFile(String srcPath, String dstPath) throws IOException {
+        Path sourcePath = new Path(srcPath);
+        Path destionationPath = new Path(dstPath);
+
+        hdfs.copyToLocalFile(false, sourcePath, destionationPath);
+    }
+
     /**
      * Creates empty file or directory
      *
